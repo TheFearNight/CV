@@ -3,17 +3,17 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #f4f4f4, #e9f3ff);
-  color: #222;
+  background: linear-gradient(135deg, #1b1b1b, #2a2a2a);
+  color: #e4e4e4;
   line-height: 1.6;
 }
 
 header {
-  background: linear-gradient(135deg, #007acc, #005fa3);
+  background: linear-gradient(135deg, #0a84ff, #0059b3);
   color: #fff;
   padding: 3rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 header h1 {
   margin: 0;
@@ -26,22 +26,22 @@ header p {
 }
 
 section {
-  background: #fff;
+  background: #222;
   margin: 2rem auto;
   padding: 2.5rem;
   max-width: 900px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 section:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
 }
 
 h2 {
-  color: #005fa3;
-  border-left: 5px solid #007acc;
+  color: #0a84ff;
+  border-left: 5px solid #0a84ff;
   padding-left: 0.8rem;
   margin-bottom: 1rem;
   font-size: 1.6rem;
@@ -56,7 +56,7 @@ ul li {
 }
 ul li::before {
   content: "•";
-  color: #007acc;
+  color: #0a84ff;
   font-weight: bold;
   display: inline-block;
   width: 1rem;
@@ -66,14 +66,14 @@ ul li::before {
 footer {
   text-align: center;
   padding: 1.2rem;
-  background: #f0f4f9;
-  color: #444;
+  background: #1a1a1a;
+  color: #aaa;
   font-size: 0.95rem;
   margin-top: 3rem;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #333;
 }
 footer a {
-  color: #007acc;
+  color: #0a84ff;
   text-decoration: none;
   font-weight: 500;
 }
