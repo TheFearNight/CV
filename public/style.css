@@ -1,21 +1,19 @@
-/* Reset & basic setup */
 html, body {
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.6;
-  background: #2a2a2a; /* slightly greyish dark background */
+  background: #2a2a2a;
   color: #e0e0e0;
 }
 
-/* Header */
 header {
-  background: linear-gradient(135deg, #4b0082, #2e004f); /* dark purple gradient */
+  background: linear-gradient(135deg, #4b0082, #2e004f);
   color: #fff;
   padding: 3rem 2rem;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-  margin: 0; /* remove any extra spacing above */
+  margin: 0;
 }
 
 header h1 {
@@ -25,14 +23,13 @@ header h1 {
 }
 
 header p {
-  margin: 0.5rem 0 0 0; /* remove extra top spacing */
+  margin: 0.5rem 0 0 0;
   font-size: 1.2rem;
   opacity: 0.9;
 }
 
-/* Sections */
 section {
-  background: #333; /* darker than body but not too dark */
+  background: #333;
   margin: 2rem auto;
   padding: 2.5rem;
   max-width: 900px;
@@ -43,10 +40,9 @@ section {
 
 section:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff; /* glowing effect on hover */
+  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
 }
 
-/* Headings */
 h2 {
   color: #00d4ff;
   border-left: 5px solid #00d4ff;
@@ -55,7 +51,6 @@ h2 {
   font-size: 1.6rem;
 }
 
-/* Lists */
 ul {
   padding-left: 1.5rem;
 }
@@ -74,7 +69,6 @@ ul li::before {
   margin-left: -1.2rem;
 }
 
-/* Section Images */
 .section-image {
   width: 100%;
   max-width: 600px;
@@ -84,29 +78,16 @@ ul li::before {
   box-shadow: 0 6px 20px rgba(0,0,0,0.7);
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1.2rem;
-  background: #1a1a1a; /* darker than body */
+  background: #1a1a1a;
   color: #888;
-  font-size: 0.9rem; /* slightly smaller text */
+  font-size: 0.9rem;
   margin-top: 3rem;
   border-top: 1px solid #222;
-  box-shadow: none; /* remove glowing by default */
+  box-shadow: none;
 }
-
-footer p {
-  margin: 0.3rem 0;
-}
-
-footer i {
-  color: #00d4ff;
-  margin-right: 0.3rem;
-  font-size: 1em; /* same size as text */
-  vertical-align: middle; /* align nicely with text */
-}
-
 
 .contact-me {
   display: inline-block;
@@ -120,25 +101,38 @@ footer i {
   transition: 0.3s ease;
 }
 
-/* Contact rows */
+.contact-me:hover {
+  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
+  transform: translateY(-2px);
+}
+
 .contact-row {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
 }
 
-/* Left side (icon + label) */
 .contact-left {
   display: flex;
   align-items: center;
-  width: 120px; /* adjust if needed */
+  width: 120px;
 }
 
-/* Icon images */
 .contact-icon {
-  width: 1em;       /* same size as text */
+  width: 1em;
   height: 1em;
   margin-right: 0.4rem;
   object-fit: contain;
   vertical-align: middle;
+}
+
+.contact-left span {
+  margin-right: 0.2rem;
+  text-align: right;
+  width: calc(100% - 0.2rem);
+}
+
+.contact-right {
+  margin-left: 0.5rem;
+  flex: 1;
 }
