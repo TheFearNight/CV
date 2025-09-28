@@ -41,8 +41,62 @@
       <li>JavaScript</li>
     </ul>
   </section>
+
+  <section>
+    <h2>Video</h2>
+    <p>Preview a local video file or load a remote MP4 URL.</p>
+    <label>
+      Upload video:
+      <input id="video-input" type="file" accept="video/*">
+    </label>
+    <div style="margin-top:8px;">
+      <label>
+        Or paste direct MP4 URL:
+        <input id="video-url" type="url" placeholder="https://.../video.mp4" style="width:60%">
+        <button id="load-url">Load</button>
+      </label>
+    </div>
+    <div id="video-preview-container" style="margin-top:10px;">
+      <video id="video-preview" controls style="max-width:100%; display:none"></video>
+    </div>
+  </section>
+
   <footer>
     <p>Contact: your.email@example.com</p>
   </footer>
+
+  <script>
+    // Local file -> preview
+    const input = document.getElementById('video-input');
+    const preview = document.getElementById('video-preview');
+    const urlInput = document.getElementById('video-url');
+    const loadBtn = document.getElementById('load-url');
+    let objectUrl = null;
+
+    input.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      objectUrl = URL.createObjectURL(file);
+      preview.src = objectUrl;
+      preview.style.display = 'block';
+      preview.play().catch(()=>{});
+    });
+
+    // Load remote MP4 URL
+    loadBtn.addEventListener('click', () => {
+      const v = urlInput.value.trim();
+      if (!v) return;
+      if (objectUrl) { URL.revokeObjectURL(objectUrl); objectUrl = null; }
+      preview.src = v;
+      preview.style.display = 'block';
+      preview.play().catch(()=>{});
+    });
+
+    // cleanup
+    window.addEventListener('beforeunload', () => {
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    });
+  </script>
 </body>
 </html>
