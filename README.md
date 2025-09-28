@@ -53,11 +53,11 @@
     </ul>
   </section>
 
-  <footer>
-    <p><i class="fas fa-envelope"></i> Email: kenneth.lim001@binus.ac.id</p>
-    <p><i class="fas fa-phone"></i> Phone: +62 858 8310 0796</p>
-    <p><i class="fab fa-linkedin"></i> LinkedIn: https://www.linkedin.com/in/kenneth-alexander-301905326</p>
-    <p><i class="fab fa-line"></i> Line ID: cannotsikeren</p>
-  </footer>
+ <footer>
+  <p><img src="icons/email.png" alt="Email" class="contact-icon"> Email: kenneth.lim001@binus.ac.id</p>
+  <p><img src="icons/phone.png" alt="Phone" class="contact-icon"> Phone: +62 858 8310 0796</p>
+  <p><img src="icons/linkedin.png" alt="LinkedIn" class="contact-icon"> LinkedIn: https://www.linkedin.com/in/kenneth-alexander-301905326</p>
+  <p><img src="icons/line.png" alt="Line" class="contact-icon"> Line ID: cannotsikeren</p>
+</footer>
 </body>
 </html>
