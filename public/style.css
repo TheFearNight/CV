@@ -107,28 +107,30 @@ footer {
 }
 
 .contact-row {
-  display: grid;
-  grid-template-columns: auto 10px 1fr;
+  display: flex;
   align-items: center;
   margin: 0.5rem 0;
-  column-gap: 0.3rem;
 }
 
 .contact-left {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  width: 100px; 
 }
 
 .contact-left span {
-  display: block;
+  display: inline-block;
+  text-align: left;
 }
 
 .contact-colon {
-  text-align: right;
+  width: 10px; 
+  text-align: center;
 }
 
 .contact-right {
+  flex: 1;
   text-align: left;
 }
 
