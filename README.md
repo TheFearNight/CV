@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Mobile status bar -->
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#121212">
 
-  <title>Kenneth Alexander | CV</title>
-
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-RXf+QSDCUQs4m3g1i0sKq77pE6Wgj0h3mCyrXiq5YpJo1FqKf1Q7vJmZFXU4dzsR9hz0tL8F/ZhvK+0Uw5Cw2g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="stylesheet" href="style.css">
