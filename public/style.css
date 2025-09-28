@@ -98,4 +98,50 @@ footer i {
   color: #00d4ff;
   margin-right: 0.5rem;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #eee;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1f1f1f;
+}
+
+section {
+  background-color: #1f1f1f;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1f1f1f;
+}
+
+.contact-me p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+  filter: drop-shadow(0 0 6px #00ffff);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px #00ffff);
+}
 
