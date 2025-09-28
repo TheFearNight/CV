@@ -71,6 +71,15 @@ ul li::before {
   margin-left: -1.2rem;
 }
 
+.section-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
 footer {
   text-align: center;
   padding: 1.2rem;
@@ -83,4 +92,9 @@ footer {
 
 footer p {
   margin: 0.3rem 0;
+}
+
+footer i {
+  color: #00d4ff;
+  margin-right: 0.5rem;
 }
