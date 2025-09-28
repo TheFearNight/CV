@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
+    "serve": "^14.2.5"
+  },
+  "scripts": {
+    "prestart": "mkdir -p public",
+    "start": "npx serve public"
+  }
+}
