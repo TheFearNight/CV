@@ -103,8 +103,10 @@ footer p {
 footer i {
   color: #00d4ff;
   margin-right: 0.3rem;
-  font-size: 0.85rem; /* smaller icon */
+  font-size: 1em; /* same size as text */
+  vertical-align: middle; /* align nicely with text */
 }
+
 
 /* Glowing Contact Me example */
 .contact-me {
