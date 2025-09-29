@@ -140,3 +140,35 @@ footer {
   object-fit: contain;
   vertical-align: middle;
 }
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-list li {
+  position: relative;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.experience-list li .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: 250px;
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 120%;
+  transition: opacity 0.3s;
+  z-index: 1;
+  font-size: 0.9rem;
+}
+
+.experience-list li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
