@@ -150,20 +150,23 @@ footer {
   position: relative;
   margin: 1rem 0;
   cursor: pointer;
+  color: #eee;
 }
 
 .experience-list li .tooltip {
   visibility: hidden;
   opacity: 0;
-  width: 250px;
-  background-color: #222;
+  width: 300px;
+  background-color: #111;
   color: #fff;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.6rem;
+  border-radius: 8px;
   position: absolute;
   left: 0;
   top: 120%;
-  transition: opacity 0.3s;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(-5px);
   z-index: 1;
   font-size: 0.9rem;
 }
@@ -171,4 +174,5 @@ footer {
 .experience-list li:hover .tooltip {
   visibility: visible;
   opacity: 1;
+  transform: translateY(0);
 }
