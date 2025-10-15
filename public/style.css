@@ -1,10 +1,10 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.6;
-  background: #2a2a2a;
+  font-family: "Segoe UI", "Times New Roman", sans-serif;
+  background: #1e1e1e;
   color: #e0e0e0;
+  line-height: 1.7;
 }
 
 header {
@@ -13,42 +13,41 @@ header {
   padding: 3rem 2rem;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-  margin: 0;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.8rem;
+  font-size: 3rem;
   letter-spacing: 1px;
 }
 
 header p {
-  margin: 0.5rem 0 0 0;
+  margin-top: 0.8rem;
   font-size: 1.2rem;
   opacity: 0.9;
 }
 
 section {
-  background: #333;
+  background: #2b2b2b;
   margin: 2rem auto;
   padding: 2.5rem;
   max-width: 900px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
+  box-shadow: 0 0 25px #00d4ff;
 }
 
 h2 {
   color: #00d4ff;
   border-left: 5px solid #00d4ff;
   padding-left: 0.8rem;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.7rem;
 }
 
 ul {
@@ -56,7 +55,7 @@ ul {
 }
 
 ul li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   position: relative;
 }
 
@@ -69,41 +68,60 @@ ul li::before {
   margin-left: -1.2rem;
 }
 
-.section-image {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+.experience-list {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-list li {
+  position: relative;
+  margin: 1.2rem 0;
+  cursor: pointer;
+}
+
+.experience-list li .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: 320px;
+  background-color: #111;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 120%;
+  box-shadow: 0 0 12px #00d4ff;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(-5px);
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+.experience-list li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
   text-align: center;
-  padding: 1.2rem;
-  background: #1a1a1a;
-  color: #888;
-  font-size: 0.9rem;
+  padding: 2rem;
+  background: #141414;
+  color: #aaa;
+  font-size: 0.95rem;
   margin-top: 3rem;
   border-top: 1px solid #222;
-  box-shadow: none;
 }
 
 .contact-me {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
-  font-size: 1.1rem;
-  color: #00d4ff;
+  padding: 1rem 1.5rem;
   border: 2px solid #00d4ff;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
-  transition: 0.3s ease;
-}
-
-.contact-me:hover {
-  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
-  transform: translateY(-2px);
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00d4ff;
+  color: #00d4ff;
+  text-align: left;
+  max-width: 600px;
 }
 
 .contact-row {
@@ -116,16 +134,11 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  width: 100px; 
-}
-
-.contact-left span {
-  display: inline-block;
-  text-align: left;
+  width: 110px;
 }
 
 .contact-colon {
-  width: 10px; 
+  width: 10px;
   text-align: center;
 }
 
@@ -137,183 +150,14 @@ footer {
 .contact-icon {
   width: 1em;
   height: 1em;
-  object-fit: contain;
   vertical-align: middle;
 }
 
-.experience-list {
-  list-style: none;
-  padding: 0;
-}
-
-.experience-list li {
-  position: relative;
-  margin: 1rem 0;
-  cursor: pointer;
-  color: #eee;
-}
-
-.experience-list li .tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: 300px;
-  background-color: #111;
-  color: #fff;
-  padding: 0.6rem;
-  border-radius: 8px;
-  position: absolute;
-  left: 0;
-  top: 120%;
-  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: translateY(-5px);
-  z-index: 1;
-  font-size: 0.9rem;
-}
-
-.experience-list li:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
-}
-
-h2 {
+a {
   color: #00d4ff;
-  border-left: 5px solid #00d4ff;
-  padding-left: 0.8rem;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-}
-
-ul {
-  padding-left: 1.5rem;
-}
-
-ul li {
-  margin-bottom: 0.6rem;
-  position: relative;
-}
-
-ul li::before {
-  content: "•";
-  color: #00d4ff;
-  font-weight: bold;
-  display: inline-block;
-  width: 1rem;
-  margin-left: -1.2rem;
-}
-
-.section-image {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-}
-
-footer {
-  text-align: center;
-  padding: 1.2rem;
-  background: #1a1a1a;
-  color: #888;
-  font-size: 0.9rem;
-  margin-top: 3rem;
-  border-top: 1px solid #222;
-  box-shadow: none;
-}
-
-.contact-me {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  font-size: 1.1rem;
-  color: #00d4ff;
-  border: 2px solid #00d4ff;
-  border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
-  transition: 0.3s ease;
 }
 
-.contact-me:hover {
-  box-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
-  transform: translateY(-2px);
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem 0;
-}
-
-.contact-left {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  width: 100px; 
-}
-
-.contact-left span {
-  display: inline-block;
-  text-align: left;
-}
-
-.contact-colon {
-  width: 10px; 
-  text-align: center;
-}
-
-.contact-right {
-  flex: 1;
-  text-align: left;
-}
-
-.contact-icon {
-  width: 1em;
-  height: 1em;
-  object-fit: contain;
-  vertical-align: middle;
-}
-
-.experience-list {
-  list-style: none;
-  padding: 0;
-}
-
-.experience-list li {
-  position: relative;
-  margin: 1rem 0;
-  cursor: pointer;
-  color: #eee;
-}
-
-.experience-list li .tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: 300px;
-  background-color: #111;
-  color: #fff;
-  padding: 0.6rem;
-  border-radius: 8px;
-  position: absolute;
-  left: 0;
-  top: 120%;
-  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: translateY(-5px);
-  z-index: 1;
-  font-size: 0.9rem;
-}
-
-.experience-list li:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
+a:hover {
+  text-decoration: underline;
 }
