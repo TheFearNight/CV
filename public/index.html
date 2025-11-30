@@ -85,7 +85,7 @@
 
 <footer>
   <section id="contact">
-    <h2>Contact</h2>
+    <h3>Contact</h3>
     <p>Email: <a href="mailto:kennethnkj@gmail.com">kennethnkj@gmail.com</a></p>
     <p>Phone: +62 858 8310 0796</p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">linkedin.com/in/kenneth-alexander-301905326</a></p>
@@ -98,12 +98,12 @@ const header = document.getElementById('header');
 const nav = document.getElementById('nav');
 const links = nav.querySelectorAll('a');
 
-// Smooth scroll
+// Smooth scroll with slower duration
 links.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
@@ -119,6 +119,13 @@ window.addEventListener('scroll', () => {
   } else {
     header.classList.remove('minimized');
   }
+});
+
+// Scroll snap behavior
+document.documentElement.style.scrollSnapType = 'y mandatory';
+const sections = document.querySelectorAll('main section, footer section#contact');
+sections.forEach(sec => {
+  sec.style.scrollSnapAlign = 'start';
 });
 </script>
 
