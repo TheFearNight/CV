@@ -6,63 +6,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kenneth Alexander Lim | CV</title>
 <style>
-  html {
-    scroll-behavior: smooth;
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
-
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-line-height: 1.6;
-}
 
 header {
 position: fixed;
 top: 0;
 width: 100%;
+max-width: 100%;
 background-color: #333;
 color: #fff;
 padding: 20px 40px;
-transition: all 0.3s ease;
 z-index: 1000;
 display: flex;
+flex-direction: column;
 align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
+transition: all 0.3s ease;
 }
 
 header.minimized {
-padding: 5px 40px;
-font-size: 0.9rem;
+padding: 10px 40px;
 }
 
 .header-name {
 text-align: center;
-flex: 1 1 100%;
-margin-bottom: 10px;
-}
-
-header.minimized .header-name {
-margin-bottom: 0;
-font-size: 1rem;
 }
 
 .header-name h1 {
 margin: 0;
 font-size: 2rem;
-transition: font-size 0.3s;
 }
 
-header.minimized .header-name h1 {
-font-size: 1.2rem;
+.header-name p {
+margin: 5px 0 10px 0;
+font-size: 1rem;
 }
 
 nav {
-flex: 1 1 auto;
 display: flex;
-justify-content: flex-end;
-gap: 15px;
+justify-content: center;
 flex-wrap: wrap;
+gap: 15px;
 }
 
 nav a {
@@ -71,13 +59,6 @@ text-decoration: none;
 font-weight: bold;
 position: relative;
 transition: transform 0.3s ease, opacity 0.3s ease;
-opacity: 0;
-transform: translateY(-20px);
-}
-
-nav.show a {
-opacity: 1;
-transform: translateY(0);
 }
 
 nav a:hover::after {
@@ -94,18 +75,19 @@ white-space: nowrap;
 }
 
 main {
-padding-top: 160px;
+padding-top: 180px; /* enough for header */
 display: flex;
 flex-direction: column;
 align-items: center;
+width: 100%;
+max-width: 100%;
 }
 
 section {
-padding: 150px 20px; /* more spacing */
+padding: 150px 20px;
 border-bottom: 1px solid #ddd;
 max-width: 900px;
 text-align: center;
-scroll-margin-top: 160px; /* offset for fixed header */
 }
 
 section h2 {
@@ -160,8 +142,8 @@ margin-bottom: 20px;
 footer section#contact {
 max-width: 600px;
 width: 100%;
-padding: 15px 0;
 text-align: center;
+padding: 15px 0;
 }
 
 footer section#contact h3 {
@@ -279,12 +261,7 @@ text-decoration: none;
     }
   });
 
-  // Animate nav links
-  window.addEventListener('load', () => {
-    nav.classList.add('show');
-  });
-
-  // Smooth scroll offset for nav clicks
+  // Smooth scroll only on nav click
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -292,7 +269,7 @@ text-decoration: none;
       const offset = header.offsetHeight;
       const bodyRect = document.body.getBoundingClientRect().top;
       const targetRect = target.getBoundingClientRect().top;
-      const scrollPos = targetRect - bodyRect - offset + 5; // slight padding
+      const scrollPos = targetRect - bodyRect - offset + 5;
       window.scrollTo({top: scrollPos, behavior: 'smooth'});
     });
   });
