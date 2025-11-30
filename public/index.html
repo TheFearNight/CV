@@ -21,32 +21,33 @@ background-color: #333;
 color: #fff;
 z-index: 1000;
 box-sizing: border-box;
-padding: 20px 0; /* always fixed */
+transition: all 0.3s ease;
 }
 
-.header-content {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-box-sizing: border-box;
+.header-name {
+text-align: center;
+padding: 20px 0;
+transition: all 0.3s ease;
 }
 
 .header-name h1 {
 margin: 0;
 font-size: 2rem;
+transition: font-size 0.3s ease;
 }
 
 .header-name p {
 margin: 5px 0 0 0;
 font-size: 1rem;
+transition: font-size 0.3s ease;
 }
 
 nav {
 display: flex;
+justify-content: center;
 gap: 20px;
+background-color: #444;
+padding: 10px 0;
 }
 
 nav a {
@@ -70,7 +71,7 @@ white-space: nowrap;
 }
 
 main {
-padding-top: 120px; /* space for fixed header */
+padding-top: 140px; /* space for fixed header and nav */
 max-width: 900px;
 margin: 0 auto;
 width: 100%;
@@ -160,19 +161,17 @@ text-decoration: none;
 <body>
 
 <header>
-  <div class="header-content">
-    <div class="header-name">
-      <h1>Kenneth Alexander Lim</h1>
-      <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
-    </div>
-    <nav id="nav">
-      <a href="#about" data-tooltip="Learn more about me">About</a>
-      <a href="#education" data-tooltip="Check my education">Education</a>
-      <a href="#projects" data-tooltip="See my projects">Projects</a>
-      <a href="#organization" data-tooltip="Organizational experience">Organization</a>
-      <a href="#skills" data-tooltip="View my skills">Skills</a>
-    </nav>
+  <div class="header-name" id="header-name">
+    <h1>Kenneth Alexander Lim</h1>
+    <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
   </div>
+  <nav id="nav">
+    <a href="#about" data-tooltip="Learn more about me">About</a>
+    <a href="#education" data-tooltip="Check my education">Education</a>
+    <a href="#projects" data-tooltip="See my projects">Projects</a>
+    <a href="#organization" data-tooltip="Organizational experience">Organization</a>
+    <a href="#skills" data-tooltip="View my skills">Skills</a>
+  </nav>
 </header>
 
 <main>
@@ -245,7 +244,21 @@ text-decoration: none;
 </footer>
 
 <script>
+  const headerName = document.getElementById('header-name');
   const nav = document.getElementById('nav');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      headerName.style.padding = '10px 0';
+      headerName.querySelector('h1').style.fontSize = '1.5rem';
+      headerName.querySelector('p').style.fontSize = '0.9rem';
+    } else {
+      headerName.style.padding = '20px 0';
+      headerName.querySelector('h1').style.fontSize = '2rem';
+      headerName.querySelector('p').style.fontSize = '1rem';
+    }
+  });
+
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
