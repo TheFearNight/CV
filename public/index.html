@@ -5,7 +5,180 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kenneth Alexander Lim | CV</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+line-height: 1.6;
+}
+
+header {
+position: fixed;
+top: 0;
+width: 100%;
+background-color: #333;
+color: #fff;
+padding: 20px 40px;
+transition: all 0.3s ease;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+header.minimized {
+padding: 5px 40px;
+font-size: 0.9rem;
+}
+
+.header-name {
+text-align: center;
+flex: 1 1 100%;
+margin-bottom: 10px;
+}
+
+header.minimized .header-name {
+margin-bottom: 0;
+font-size: 1rem;
+}
+
+.header-name h1 {
+margin: 0;
+font-size: 2rem;
+transition: font-size 0.3s;
+}
+
+header.minimized .header-name h1 {
+font-size: 1.2rem;
+}
+
+nav {
+flex: 1 1 auto;
+display: flex;
+justify-content: flex-end;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+nav a {
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+position: relative;
+transition: transform 0.3s ease, opacity 0.3s ease;
+opacity: 0;
+transform: translateY(-20px);
+}
+
+nav.show a {
+opacity: 1;
+transform: translateY(0);
+}
+
+nav a:hover::after {
+content: attr(data-tooltip);
+position: absolute;
+bottom: -25px;
+left: 0;
+background: #555;
+color: #fff;
+padding: 3px 8px;
+border-radius: 3px;
+font-size: 0.8rem;
+white-space: nowrap;
+}
+
+main {
+padding-top: 160px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+section {
+padding: 150px 20px; /* more spacing */
+border-bottom: 1px solid #ddd;
+max-width: 900px;
+text-align: center;
+scroll-margin-top: 160px; /* offset for fixed header */
+}
+
+section h2 {
+margin-top: 0;
+font-size: 2rem;
+}
+
+section p {
+font-size: 1.1rem;
+}
+
+.experience {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+justify-content: center;
+}
+
+.experience-item {
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 20px;
+width: 350px;
+background-color: #f9f9f9;
+text-align: center;
+}
+
+.experience-item img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+margin-bottom: 15px;
+}
+
+footer {
+background-color: #333;
+color: #fff;
+width: 100%;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 30px 20px;
+}
+
+footer .footer-line {
+width: 100%;
+border-top: 1px solid #fff;
+margin-bottom: 20px;
+}
+
+footer section#contact {
+max-width: 600px;
+width: 100%;
+padding: 15px 0;
+text-align: center;
+}
+
+footer section#contact h3 {
+margin: 0 0 10px 0;
+font-size: 1.5rem;
+}
+
+footer section#contact p {
+margin: 5px 0;
+font-size: 1rem;
+}
+
+footer a {
+color: #fff;
+text-decoration: none;
+} </style>
+
 </head>
 <body>
 
@@ -27,7 +200,6 @@
 <section id="about">
   <h2>About Me</h2>
   <p>I am a Computer Engineering student at Binus University, passionate about embedded systems, electronics design, and hands-on innovation. I love creating functional prototypes, experimenting with sensors and microcontrollers, and continuously improving my engineering skills.</p>
-  <img src="Images/profile.jpg" alt="Kenneth Alexander Lim" class="profile-photo">
 </section>
 
 <section id="education">
@@ -84,9 +256,9 @@
 </main>
 
 <footer>
-  <hr class="footer-line">
+  <div class="footer-line"></div>
   <section id="contact">
-    <h3>Contact</h3>
+    <h3>Contact Me</h3>
     <p>Email: <a href="mailto:kennethnkj@gmail.com">kennethnkj@gmail.com</a></p>
     <p>Phone: +62 858 8310 0796</p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">linkedin.com/in/kenneth-alexander-301905326</a></p>
@@ -95,37 +267,35 @@
 </footer>
 
 <script>
-const header = document.getElementById('header');
-const nav = document.getElementById('nav');
-const links = nav.querySelectorAll('a');
+  const header = document.getElementById('header');
+  const nav = document.getElementById('nav');
 
-// Smooth scroll for nav links
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Minimize header on scroll
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+      header.classList.add('minimized');
+    } else {
+      header.classList.remove('minimized');
+    }
   });
-});
 
-// Show nav animation
-window.addEventListener('load', () => {
-  setTimeout(() => nav.classList.add('show'), 300);
-});
+  // Animate nav links
+  window.addEventListener('load', () => {
+    nav.classList.add('show');
+  });
 
-// Header minimize
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 50){
-    header.classList.add('minimized');
-  } else {
-    header.classList.remove('minimized');
-  }
-});
-
-// Scroll snap for sections
-document.documentElement.style.scrollSnapType = 'y mandatory';
-const sections = document.querySelectorAll('main section, footer section#contact');
-sections.forEach(sec => sec.style.scrollSnapAlign = 'start');
+  // Smooth scroll offset for nav clicks
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      const offset = header.offsetHeight;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const targetRect = target.getBoundingClientRect().top;
+      const scrollPos = targetRect - bodyRect - offset + 5; // slight padding
+      window.scrollTo({top: scrollPos, behavior: 'smooth'});
+    });
+  });
 </script>
 
 </body>
