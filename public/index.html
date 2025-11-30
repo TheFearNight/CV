@@ -21,12 +21,7 @@ background-color: #333;
 color: #fff;
 z-index: 1000;
 box-sizing: border-box;
-padding: 20px 0; /* Base padding */
-transition: padding 0.3s ease;
-}
-
-header.minimized {
-padding: 10px 0; /* Only if you want shrinking on scroll */
+padding: 20px 0; /* always fixed */
 }
 
 .header-content {
@@ -75,7 +70,7 @@ white-space: nowrap;
 }
 
 main {
-padding-top: 140px; /* space for fixed header */
+padding-top: 120px; /* space for fixed header */
 max-width: 900px;
 margin: 0 auto;
 width: 100%;
@@ -130,150 +125,4 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 30px 20px;
-box-sizing: border-box;
-}
-
-footer .footer-line {
-width: 100%;
-border-top: 1px solid #fff;
-margin-bottom: 20px;
-}
-
-footer section#contact {
-max-width: 600px;
-width: 100%;
-text-align: center;
-padding: 15px 0;
-}
-
-footer section#contact h3 {
-margin: 0 0 10px 0;
-font-size: 1.5rem;
-}
-
-footer section#contact p {
-margin: 5px 0;
-font-size: 1rem;
-}
-
-footer a {
-color: #fff;
-text-decoration: none;
-} </style>
-
-</head>
-<body>
-
-<header id="header">
-  <div class="header-content">
-    <div class="header-name">
-      <h1>Kenneth Alexander Lim</h1>
-      <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
-    </div>
-    <nav id="nav">
-      <a href="#about" data-tooltip="Learn more about me">About</a>
-      <a href="#education" data-tooltip="Check my education">Education</a>
-      <a href="#projects" data-tooltip="See my projects">Projects</a>
-      <a href="#organization" data-tooltip="Organizational experience">Organization</a>
-      <a href="#skills" data-tooltip="View my skills">Skills</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a Computer Engineering student at Binus University, passionate about embedded systems, electronics design, and hands-on innovation. I love creating functional prototypes, experimenting with sensors and microcontrollers, and continuously improving my engineering skills.</p>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <p><strong>Binus University</strong> — 2023–Present</p>
-  <ul>
-    <li>Bachelor of Engineering in Computer Engineering</li>
-    <li>Current GPA (IPK): 2.45 / 4.00</li>
-    <li>Focused on embedded systems, microcontrollers, and computer architecture</li>
-  </ul>
-</section>
-
-<section id="projects">
-  <h2>Project Experience</h2>
-  <div class="experience">
-    <div class="experience-item">
-      <img src="Images/watering-system.jpg" alt="Automatic Plant Watering System">
-      <strong>Automatic Plant Watering System (2025)</strong>
-      <p>Designed and implemented an automatic watering system using Arduino Nano, YL-69, DS18B20, and RTC DS3231. Automatically monitors soil moisture and activates water flow to maintain optimal hydration.</p>
-    </div>
-    <div class="experience-item">
-      <img src="Images/door-lock.jpg" alt="Smart Door Lock System">
-      <strong>Smart Door Lock System (2023)</strong>
-      <p>Developed a smart lock using binary password input, reset, and override functions. Integrated hardware and software logic for improved access control and security.</p>
-    </div>
-    <div class="experience-item">
-      <img src="Images/morse-device.jpg" alt="Morse Code Device">
-      <strong>Morse Code to Words Device (IEEE Project, 2024–2025)</strong>
-      <p>Collaborated with IEEE Binus University team to build a Morse translator converting dots and dashes into readable text. Led technical design, coding, and prototype assembly.</p>
-    </div>
-  </div>
-</section>
-
-<section id="organization">
-  <h2>Organizational Experience</h2>
-  <ul>
-    <li>
-      <strong>Member, IEEE Binus University Branch (2024–2025)</strong><br>
-      Worked with 8-member team on embedded system projects. Contributed to design, soldering, and 3D modeling of the Morse input device, achieving a working prototype.
-    </li>
-  </ul>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Embedded Systems:</strong> Arduino, ESP32 — sensor calibration, relay control, and automation</li>
-    <li><strong>Programming:</strong> Python, C/C++ for firmware and data testing</li>
-    <li><strong>Software Tools:</strong> Visual Studio Code, EasyEDA, Fusion</li>
-    <li><strong>Electronics:</strong> Circuit wiring, PCB design, soldering, troubleshooting</li>
-    <li><strong>Communication:</strong> Fluent English, technical documentation, and presentations</li>
-  </ul>
-</section>
-</main>
-
-<footer>
-  <div class="footer-line"></div>
-  <section id="contact">
-    <h3>Contact Me</h3>
-    <p>Email: <a href="mailto:kennethnkj@gmail.com">kennethnkj@gmail.com</a></p>
-    <p>Phone: +62 858 8310 0796</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">linkedin.com/in/kenneth-alexander-301905326</a></p>
-  </section>
-</footer>
-
-<script>
-  const header = document.getElementById('header');
-  const nav = document.getElementById('nav');
-
-  // REMOVE header shrinking (optional)
-  // If you want it fixed, comment out the scroll logic
-  window.addEventListener('scroll', () => {
-    // header.classList.add('minimized'); 
-    // header.classList.remove('minimized'); 
-    // This does nothing now, header stays same size
-  });
-
-  // Smooth scroll only on nav click
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      const offset = header.offsetHeight;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const targetRect = target.getBoundingClientRect().top;
-      const scrollPos = targetRect - bodyRect - offset + 5;
-      window.scrollTo({top: scrollPos, behavior: 'smooth'});
-    });
-  });
-</script>
-
-</body>
-</html>
+bo
