@@ -1,118 +1,210 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenneth Alexander Lim | CV</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenneth Alexander Lim | CV</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+  }
+
+header {
+position: fixed;
+top: 0;
+width: 100%;
+background-color: #333;
+color: #fff;
+padding: 20px;
+transition: all 0.3s ease;
+z-index: 1000;
+}
+
+header.minimized {
+padding: 5px 20px;
+font-size: 0.9rem;
+}
+
+header h1 {
+margin: 0;
+font-size: 2rem;
+transition: font-size 0.3s;
+}
+
+header.minimized h1 {
+font-size: 1.2rem;
+}
+
+nav {
+margin-top: 10px;
+}
+
+nav a {
+color: #fff;
+text-decoration: none;
+margin-right: 15px;
+font-weight: bold;
+position: relative;
+}
+
+nav a:hover::after {
+content: attr(data-tooltip);
+position: absolute;
+bottom: -25px;
+left: 0;
+background: #555;
+color: #fff;
+padding: 3px 8px;
+border-radius: 3px;
+font-size: 0.8rem;
+white-space: nowrap;
+}
+
+main {
+padding-top: 120px;
+}
+
+section {
+padding: 60px 20px;
+border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+margin-top: 0;
+}
+
+.experience {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.experience-item {
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 15px;
+width: 300px;
+background-color: #f9f9f9;
+}
+
+.experience-item img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+}
+
+footer a {
+color: #fff;
+}
+
+</style>
 </head>
 <body>
-  <header>
-    <h1>Kenneth Alexander Lim</h1>
-    <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a Computer Engineering student at Binus University, passionate about embedded systems,
-      electronics design, and hands-on innovation. I love creating functional prototypes,
-      experimenting with sensors and microcontrollers, and continuously improving my engineering skills.
-    </p>
-  </section>
+<header id="header">
+  <h1>Kenneth Alexander Lim</h1>
+  <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
+  <nav>
+    <a href="#about" data-tooltip="Learn more about me">About</a>
+    <a href="#education" data-tooltip="Check my education">Education</a>
+    <a href="#projects" data-tooltip="See my projects">Projects</a>
+    <a href="#organization" data-tooltip="Organizational experience">Organization</a>
+    <a href="#skills" data-tooltip="View my skills">Skills</a>
+    <a href="#contact" data-tooltip="Get in touch">Contact</a>
+  </nav>
+</header>
 
-  <section>
-    <h2>Education</h2>
-    <p><strong>Binus University</strong> — 2023–Present</p>
-    <ul>
-      <li>Bachelor of Engineering in Computer Engineering</li>
-      <li>Current GPA (IPK): 2.45 / 4.00</li>
-      <li>Focused on embedded systems, microcontrollers, and computer architecture</li>
-    </ul>
-  </section>
+<main>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a Computer Engineering student at Binus University, passionate about embedded systems, electronics design, and hands-on innovation. I love creating functional prototypes, experimenting with sensors and microcontrollers, and continuously improving my engineering skills.</p>
+</section>
 
-  <section>
-    <h2>Project Experience</h2>
-    <ul class="experience-list">
-      <li>
-        <strong>Automatic Plant Watering System (2025)</strong>
-        <div class="tooltip">
-          Designed and implemented an automatic watering system using Arduino Nano, YL-69, DS18B20, and RTC DS3231.
-          Automatically monitors soil moisture and activates water flow to maintain optimal hydration.
-        </div>
-      </li>
-      <li>
-        <strong>Smart Door Lock System (2023)</strong>
-        <div class="tooltip">
-          Developed a smart lock using binary password input, reset, and override functions.
-          Integrated hardware and software logic for improved access control and security.
-        </div>
-      </li>
-      <li>
-        <strong>Morse Code to Words Device (IEEE Project, 2024–2025)</strong>
-        <div class="tooltip">
-          Collaborated with IEEE Binus University team to build a Morse translator converting dots and dashes into readable text.
-          Led technical design, coding, and prototype assembly.
-        </div>
-      </li>
-    </ul>
-  </section>
+<section id="education">
+  <h2>Education</h2>
+  <p><strong>Binus University</strong> — 2023–Present</p>
+  <ul>
+    <li>Bachelor of Engineering in Computer Engineering</li>
+    <li>Current GPA (IPK): 2.45 / 4.00</li>
+    <li>Focused on embedded systems, microcontrollers, and computer architecture</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Organizational Experience</h2>
-    <ul>
-      <li>
-        <strong>Member, IEEE Binus University Branch (2024–2025)</strong><br>
-        Worked with 8-member team on embedded system projects.
-        Contributed to design, soldering, and 3D modeling of the Morse input device, achieving a working prototype.
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Embedded Systems:</strong> Arduino, ESP32 — sensor calibration, relay control, and automation</li>
-      <li><strong>Programming:</strong> Python, C/C++ for firmware and data testing</li>
-      <li><strong>Software Tools:</strong> Visual Studio Code, EasyEDA, Fusion</li>
-      <li><strong>Electronics:</strong> Circuit wiring, PCB design, soldering, troubleshooting</li>
-      <li><strong>Communication:</strong> Fluent English, technical documentation, and presentations</li>
-    </ul>
-  </section>
-
-  <footer>
-    <div class="contact-me">
-      <div class="contact-row">
-        <div class="contact-left">
-          <img src="Icons/email.png" alt="Email" class="contact-icon">
-          <span>Email</span>
-        </div>
-        <div class="contact-colon">:</div>
-        <div class="contact-right">kennethnkj@gmail.com</div>
-      </div>
-
-      <div class="contact-row">
-        <div class="contact-left">
-          <img src="Icons/phone.png" alt="Phone" class="contact-icon">
-          <span>Phone</span>
-        </div>
-        <div class="contact-colon">:</div>
-        <div class="contact-right">+62 858 8310 0796</div>
-      </div>
-
-      <div class="contact-row">
-        <div class="contact-left">
-          <img src="Icons/linkedin.png" alt="LinkedIn" class="contact-icon">
-          <span>LinkedIn</span>
-        </div>
-        <div class="contact-colon">:</div>
-        <div class="contact-right">
-          <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">
-            linkedin.com/in/kenneth-alexander-301905326
-          </a>
-        </div>
-      </div>
+<section id="projects">
+  <h2>Project Experience</h2>
+  <div class="experience">
+    <div class="experience-item">
+      <img src="Images/watering-system.jpg" alt="Automatic Plant Watering System">
+      <strong>Automatic Plant Watering System (2025)</strong>
+      <p>Designed and implemented an automatic watering system using Arduino Nano, YL-69, DS18B20, and RTC DS3231. Automatically monitors soil moisture and activates water flow to maintain optimal hydration.</p>
     </div>
-  </footer>
+    <div class="experience-item">
+      <img src="Images/door-lock.jpg" alt="Smart Door Lock System">
+      <strong>Smart Door Lock System (2023)</strong>
+      <p>Developed a smart lock using binary password input, reset, and override functions. Integrated hardware and software logic for improved access control and security.</p>
+    </div>
+    <div class="experience-item">
+      <img src="Images/morse-device.jpg" alt="Morse Code Device">
+      <strong>Morse Code to Words Device (IEEE Project, 2024–2025)</strong>
+      <p>Collaborated with IEEE Binus University team to build a Morse translator converting dots and dashes into readable text. Led technical design, coding, and prototype assembly.</p>
+    </div>
+  </div>
+</section>
+
+<section id="organization">
+  <h2>Organizational Experience</h2>
+  <ul>
+    <li>
+      <strong>Member, IEEE Binus University Branch (2024–2025)</strong><br>
+      Worked with 8-member team on embedded system projects. Contributed to design, soldering, and 3D modeling of the Morse input device, achieving a working prototype.
+    </li>
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Embedded Systems:</strong> Arduino, ESP32 — sensor calibration, relay control, and automation</li>
+    <li><strong>Programming:</strong> Python, C/C++ for firmware and data testing</li>
+    <li><strong>Software Tools:</strong> Visual Studio Code, EasyEDA, Fusion</li>
+    <li><strong>Electronics:</strong> Circuit wiring, PCB design, soldering, troubleshooting</li>
+    <li><strong>Communication:</strong> Fluent English, technical documentation, and presentations</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:kennethnkj@gmail.com">kennethnkj@gmail.com</a></p>
+  <p>Phone: +62 858 8310 0796</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">linkedin.com/in/kenneth-alexander-301905326</a></p>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Kenneth Alexander Lim</p>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+      header.classList.add('minimized');
+    } else {
+      header.classList.remove('minimized');
+    }
+  });
+</script>
+
 </body>
 </html>
