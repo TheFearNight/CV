@@ -20,12 +20,13 @@ width: 100%;
 background-color: #333;
 color: #fff;
 z-index: 1000;
-transition: all 0.3s ease;
 box-sizing: border-box;
+padding: 20px 0; /* Base padding */
+transition: padding 0.3s ease;
 }
 
 header.minimized {
-padding: 10px 0;
+padding: 10px 0; /* Only if you want shrinking on scroll */
 }
 
 .header-content {
@@ -34,7 +35,7 @@ justify-content: space-between;
 align-items: center;
 max-width: 1200px;
 margin: 0 auto;
-padding: 20px;
+padding: 0 20px;
 box-sizing: border-box;
 }
 
@@ -51,8 +52,6 @@ font-size: 1rem;
 nav {
 display: flex;
 gap: 20px;
-flex-wrap: nowrap;
-white-space: nowrap;
 }
 
 nav a {
@@ -77,9 +76,6 @@ white-space: nowrap;
 
 main {
 padding-top: 140px; /* space for fixed header */
-display: flex;
-flex-direction: column;
-align-items: center;
 max-width: 900px;
 margin: 0 auto;
 width: 100%;
@@ -90,8 +86,6 @@ section {
 padding: 100px 20px;
 border-bottom: 1px solid #ddd;
 text-align: center;
-width: 100%;
-box-sizing: border-box;
 }
 
 section h2 {
@@ -259,13 +253,12 @@ text-decoration: none;
   const header = document.getElementById('header');
   const nav = document.getElementById('nav');
 
-  // Minimize header on scroll
+  // REMOVE header shrinking (optional)
+  // If you want it fixed, comment out the scroll logic
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 50){
-      header.classList.add('minimized');
-    } else {
-      header.classList.remove('minimized');
-    }
+    // header.classList.add('minimized'); 
+    // header.classList.remove('minimized'); 
+    // This does nothing now, header stays same size
   });
 
   // Smooth scroll only on nav click
