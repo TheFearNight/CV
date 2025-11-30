@@ -9,7 +9,7 @@
   body {
     font-family: Arial, sans-serif;
     margin: 0;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* smooth scrolling */
     line-height: 1.6;
   }
 
@@ -67,6 +67,14 @@ color: #fff;
 text-decoration: none;
 font-weight: bold;
 position: relative;
+transition: transform 0.3s ease, opacity 0.3s ease;
+opacity: 0;
+transform: translateY(-20px);
+}
+
+nav.show a {
+opacity: 1;
+transform: translateY(0);
 }
 
 nav a:hover::after {
@@ -83,7 +91,7 @@ white-space: nowrap;
 }
 
 main {
-padding-top: 160px; /* make space for fixed header */
+padding-top: 160px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -147,7 +155,7 @@ color: #fff;
     <h1>Kenneth Alexander Lim</h1>
     <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
   </div>
-  <nav>
+  <nav id="nav">
     <a href="#about" data-tooltip="Learn more about me">About</a>
     <a href="#education" data-tooltip="Check my education">Education</a>
     <a href="#projects" data-tooltip="See my projects">Projects</a>
@@ -229,6 +237,14 @@ color: #fff;
 
 <script>
   const header = document.getElementById('header');
+  const nav = document.getElementById('nav');
+  
+  // Show nav smoothly when page loads
+  window.addEventListener('load', () => {
+    setTimeout(() => nav.classList.add('show'), 300);
+  });
+
+  // Minimize header on scroll
   window.addEventListener('scroll', () => {
     if(window.scrollY > 50){
       header.classList.add('minimized');
