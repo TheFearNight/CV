@@ -126,7 +126,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 30px 20px;
-box-sizing: border-box;
+box-sizing: border-box.
 }
 
 footer .footer-line {
@@ -165,6 +165,7 @@ text-decoration: none;
     <h1>Kenneth Alexander Lim</h1>
     <p>Bachelor of Engineering, Computer Engineering — Binus University</p>
   </div>
+
   <nav id="nav">
     <a href="#about" data-tooltip="Learn more about me">About</a>
     <a href="#education" data-tooltip="Check my education">Education</a>
@@ -175,6 +176,7 @@ text-decoration: none;
 </header>
 
 <main>
+
 <section id="about">
   <h2>About Me</h2>
   <p>I am a Computer Engineering student at Binus University, passionate about embedded systems, electronics design, and hands-on innovation. I love creating functional prototypes, experimenting with sensors and microcontrollers, and continuously improving my engineering skills.</p>
@@ -192,21 +194,28 @@ text-decoration: none;
 
 <section id="projects">
   <h2>Project Experience</h2>
+
   <div class="experience">
-    <div class="experience-item">
-      <img src="Project/watering-system.jpg" alt="Automatic Plant Watering System">
-      <strong>Automatic Plant Watering System (2025)</strong>
-      <p>Designed and implemented an automatic watering system using Arduino Nano, YL-69, DS18B20, and RTC DS3231. Automatically monitors soil moisture and activates water flow to maintain optimal hydration.</p>
-    </div>
-    <div class="experience-item">
-      <strong>Smart Door Lock System (2023)</strong>
-      <p>Developed a smart lock using binary password input, reset, and override functions. Integrated hardware and software logic for improved access control and security.</p>
-    </div>
-    <div class="experience-item">
-      <img src="Project/morse-device.jpg" alt="Morse Code Device">
-      <strong>Morse Code to Words Device (IEEE Project, 2024–2025)</strong>
-      <p>Collaborated with IEEE Binus University team to build a Morse translator converting dots and dashes into readable text. Led technical design, coding, and prototype assembly.</p>
-    </div>
+
+```
+<div class="experience-item">
+  <img src="Project/watering-system.jpg" alt="Automatic Plant Watering System">
+  <strong>Automatic Plant Watering System (2025)</strong>
+  <p>Designed and implemented an automatic watering system using Arduino Nano, YL-69, DS18B20, and RTC DS3231. Automatically monitors soil moisture and activates water flow to maintain optimal hydration.</p>
+</div>
+
+<div class="experience-item">
+  <strong>Smart Door Lock System (2023)</strong>
+  <p>Developed a smart lock using binary password input, reset, and override functions. Integrated hardware and software logic for improved access control and security.</p>
+</div>
+
+<div class="experience-item">
+  <img src="Project/morse-device.jpg" alt="Morse Code Device">
+  <strong>Morse Code to Words Device (IEEE Project, 2024–2025)</strong>
+  <p>Collaborated with IEEE Binus University team to build a Morse translator converting dots and dashes into readable text. Led technical design, coding, and prototype assembly.</p>
+</div>
+```
+
   </div>
 </section>
 
@@ -215,7 +224,7 @@ text-decoration: none;
   <ul>
     <li>
       <strong>Member, IEEE Binus University Branch (2024–2025)</strong><br>
-      Worked with 8-member team on embedded system projects. Contributed to design, soldering, and 3D modeling of the Morse input device, achieving a working prototype.
+      Worked with 8-member team on embedded system projects. Contributed to design, soldering, and 3D modeling of the Morse input device.
     </li>
   </ul>
 </section>
@@ -223,51 +232,8 @@ text-decoration: none;
 <section id="skills">
   <h2>Skills</h2>
   <ul>
-    <li><strong>Embedded Systems:</strong> Arduino, ESP32 — sensor calibration, relay control, and automation</li>
-    <li><strong>Programming:</strong> Python, C/C++ for firmware and data testing</li>
-    <li><strong>Software Tools:</strong> Visual Studio Code, EasyEDA, Fusion</li>
-    <li><strong>Electronics:</strong> Circuit wiring, PCB design, soldering, troubleshooting</li>
-    <li><strong>Communication:</strong> Fluent English, technical documentation, and presentations</li>
-  </ul>
-</section>
-</main>
-
-<footer>
-  <div class="footer-line"></div>
-  <section id="contact">
-    <h3>Contact Me</h3>
-    <p>Email: <a href="mailto:kennethnkj@gmail.com">kennethnkj@gmail.com</a></p>
-    <p>Phone: +62 858 8310 0796</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">linkedin.com/in/kenneth-alexander-301905326</a></p>
-  </section>
-</footer>
-
-<script>
-  const headerName = document.getElementById('header-name');
-  const nav = document.getElementById('nav');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      headerName.style.padding = '10px 0';
-      headerName.querySelector('h1').style.fontSize = '1.5rem';
-      headerName.querySelector('p').style.fontSize = '0.9rem';
-    } else {
-      headerName.style.padding = '20px 0';
-      headerName.querySelector('h1').style.fontSize = '2rem';
-      headerName.querySelector('p').style.fontSize = '1rem';
-    }
-  });
-
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      const offset = document.querySelector('header').offsetHeight;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset + 5;
-      window.scrollTo({top, behavior: 'smooth'});
-    });
-  });
-</script>
-
-</body>
-</html>
+    <li><strong>Embedded Systems:</strong> Arduino, ESP32 — sensor calibration, relay control, automation</li>
+    <li><strong>Programming:</strong> Python, C/C++ for firmware testing</li>
+    <li><strong>Software Tools:</strong> VS Code, EasyEDA, Fusion</li>
+    <li><strong>Electronics:</strong> Wiring, PCB design, soldering, troubleshooting</li>
+    <li><strong>Communication:</str
