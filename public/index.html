@@ -17,7 +17,6 @@ header {
 position: fixed;
 top: 0;
 width: 100%;
-max-width: 100%;
 background-color: #333;
 color: #fff;
 padding: 20px 40px;
@@ -26,6 +25,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 transition: all 0.3s ease;
+box-sizing: border-box;
 }
 
 header.minimized {
@@ -51,13 +51,14 @@ display: flex;
 justify-content: center;
 flex-wrap: wrap;
 gap: 15px;
+width: 100%;
+box-sizing: border-box;
 }
 
 nav a {
 color: #fff;
 text-decoration: none;
 font-weight: bold;
-position: relative;
 transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -75,12 +76,12 @@ white-space: nowrap;
 }
 
 main {
-padding-top: 180px; /* enough for header */
+padding-top: 180px;
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
-max-width: 100%;
+box-sizing: border-box;
 }
 
 section {
@@ -88,6 +89,8 @@ padding: 150px 20px;
 border-bottom: 1px solid #ddd;
 max-width: 900px;
 text-align: center;
+width: 100%;
+box-sizing: border-box;
 }
 
 section h2 {
@@ -113,6 +116,7 @@ padding: 20px;
 width: 350px;
 background-color: #f9f9f9;
 text-align: center;
+box-sizing: border-box;
 }
 
 .experience-item img {
@@ -131,6 +135,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 30px 20px;
+box-sizing: border-box;
 }
 
 footer .footer-line {
@@ -245,7 +250,6 @@ text-decoration: none;
     <p>Phone: +62 858 8310 0796</p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-alexander-301905326" target="_blank">linkedin.com/in/kenneth-alexander-301905326</a></p>
   </section>
-  <p>&copy; 2025 Kenneth Alexander Lim</p>
 </footer>
 
 <script>
